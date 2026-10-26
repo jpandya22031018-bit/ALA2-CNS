@@ -1,0 +1,221 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Malware Propagation Lab</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+<div class="page-shell">
+  <header class="topbar">
+    <a class="brand" href="#top">
+      <span class="brand-mark">⌘</span>
+      <span>MALWARE<span class="brand-accent">LAB</span></span>
+    </a>
+    <div class="top-status">
+      <span class="status-dot"></span>
+      EDUCATIONAL MODE | NO REAL DEVICES CONNECTED
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="eyebrow">● ACADEMIC THREAT VECTOR ANALYSIS</div>
+      <h1>Select Malware <span>Propagation Class</span></h1>
+      <p class="hero-copy">
+        Explore malware categories in cybersecurity.
+        Select a class to run a safe visual simulation on a fictional network.
+      </p>
+      <div class="hero-note">
+        VISUAL DEMONSTRATION ONLY — No files are changed.
+      </div>
+    </section>
+
+    <section class="class-grid">
+      <button class="class-card virus selected" data-type="virus" type="button">
+        <div class="card-top">
+          <span class="class-icon">▤</span>
+          <span class="class-number">CLASS 01</span>
+        </div>
+        <h2>Computer Virus</h2>
+        <p class="vector-label">[ HOST-BOUND THREAT ]</p>
+        <p class="card-description">
+          A virus may attach to a host file or program and spread
+          when that host is shared or run.
+        </p>
+        <div class="card-footer">
+          <span>SIMULATION TYPE</span>
+          <span class="card-action">SELECTED ✓</span>
+        </div>
+      </button>
+
+      <button class="class-card worm" data-type="worm" type="button">
+        <div class="card-top">
+          <span class="class-icon">ϟ</span>
+          <span class="class-number">CLASS 02</span>
+        </div>
+        <h2>Network Worm</h2>
+        <p class="vector-label">[ AUTONOMOUS SPREAD ]</p>
+        <p class="card-description">
+          A worm can spread between systems. Here, movement is
+          represented by fictional network nodes.
+        </p>
+        <div class="card-footer">
+          <span>SIMULATION TYPE</span>
+          <span class="card-action">SELECT CLASS →</span>
+        </div>
+      </button>
+
+      <button class="class-card trojan" data-type="trojan" type="button">
+        <div class="card-top">
+          <span class="class-icon">♙</span>
+          <span class="class-number">CLASS 03</span>
+        </div>
+        <h2>Trojan Horse</h2>
+        <p class="vector-label">[ DISGUISED APPLICATION ]</p>
+        <p class="card-description">
+          A Trojan pretends to be legitimate software.
+          This demo flags a sample application as suspicious.
+        </p>
+        <div class="card-footer">
+          <span>SIMULATION TYPE</span>
+          <span class="card-action">SELECT CLASS →</span>
+        </div>
+      </button>
+    </section>
+
+    <section class="lab-layout">
+      <div class="network-panel panel">
+        <div class="panel-heading">
+          <span>🔵 LIVE GRID NETWORK ARCHITECTURE</span>
+          <span class="cycle-label">
+            CYCLE: <b id="cycleValue">IDLE</b>
+          </span>
+        </div>
+
+        <div class="network-canvas">
+          <svg class="network-lines" viewBox="0 0 900 420"
+               preserveAspectRatio="none" aria-hidden="true">
+            <line x1="95" y1="85" x2="450" y2="85"/>
+            <line x1="450" y1="85" x2="805" y2="85"/>
+            <line x1="95" y1="85" x2="95" y2="315"/>
+            <line x1="450" y1="85" x2="450" y2="315"/>
+            <line x1="805" y1="85" x2="805" y2="315"/>
+            <line x1="95" y1="315" x2="450" y2="315"/>
+            <line x1="450" y1="315" x2="805" y2="315"/>
+            <line x1="95" y1="315" x2="450" y2="85"/>
+            <line x1="450" y1="315" x2="805" y2="85"/>
+
+            <circle class="packet" r="5">
+              <animateMotion dur="4s" repeatCount="indefinite"
+                path="M95 85 L450 85 L805 85"/>
+            </circle>
+            <circle class="packet packet-two" r="4">
+              <animateMotion dur="5s" repeatCount="indefinite"
+                path="M95 315 L450 85 L805 85"/>
+            </circle>
+          </svg>
+
+          <div class="network-node node-gateway" data-node="gateway">
+            <span>▰</span><b>Node-Gateway</b>
+            <small>192.168.1.1</small>
+          </div>
+
+          <div class="network-node node-finance" data-node="finance">
+            <span>▰</span><b>Finance-PC1</b>
+            <small>192.168.1.12</small>
+          </div>
+
+          <div class="network-node node-hr" data-node="hr">
+            <span>▰</span><b>HR-Terminal</b>
+            <small>192.168.1.25</small>
+          </div>
+
+          <div class="network-node node-dev" data-node="dev">
+            <span>▰</span><b>Dev-Workstation</b>
+            <small>192.168.1.77</small>
+          </div>
+
+          <div class="network-node node-sql" data-node="sql">
+            <span>▰</span><b>SQL-Database</b>
+            <small>192.168.1.103</small>
+          </div>
+
+          <div class="network-node node-admin inactive" data-node="admin">
+            <span>▱</span><b>Admin-Laptop</b>
+            <small>192.168.1.140</small>
+          </div>
+
+          <div class="network-watermark">
+            FICTIONAL NETWORK · SIMULATED EVENTS ONLY
+          </div>
+        </div>
+
+        <div class="network-legend">
+          <span>🟢 SIMULATED NODE</span>
+          <span>🔵 VISUAL PACKET</span>
+          <span>⚪ INACTIVE NODE</span>
+        </div>
+      </div>
+
+      <aside class="control-panel panel">
+        <div class="panel-heading">
+          <span>🟢 SIMULATION CONTROL</span>
+          <span class="mini-tag">LOCAL ONLY</span>
+        </div>
+
+        <div class="selected-class">
+          <span class="selected-kicker">CURRENT CLASS</span>
+          <h3 id="selectedTitle">Computer Virus</h3>
+          <p id="selectedDescription">
+            A visual demonstration using sample filenames only.
+          </p>
+        </div>
+
+        <div class="control-actions">
+          <button id="runButton" class="run-button" type="button">
+            ▶ RUN SIMULATION
+          </button>
+          <button id="resetButton" class="reset-button" type="button">
+            ↺ RESET
+          </button>
+        </div>
+
+        <div class="progress-wrap">
+          <div class="progress-label">
+            <span>SIMULATION PROGRESS</span>
+            <span id="progressText">0%</span>
+          </div>
+          <div class="progress-track">
+            <div id="progressBar" class="progress-bar"></div>
+          </div>
+        </div>
+
+        <div class="event-log">
+          <div class="log-heading">
+            <span>EVENT LOG</span>
+            <span class="live-pill">● LOCAL</span>
+          </div>
+          <div id="logOutput" class="log-output" aria-live="polite">
+            <p class="log-muted">Awaiting simulation command...</p>
+          </div>
+        </div>
+
+        <p class="safety-note">
+          🔒 Visual-only lab. No real devices, files, or networks are accessed.
+        </p>
+      </aside>
+    </section>
+
+    <footer>
+      <span>MALWARE PROPAGATION LAB</span>
+      <span>CYBERSECURITY EDUCATION • SAFE SIMULATION</span>
+      <span>v1.0.0</span>
+    </footer>
+  </main>
+</div>
+</body>
+</html>
